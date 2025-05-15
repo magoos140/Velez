@@ -1,0 +1,89 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+
+model Order {
+  id             String     @id @map("order_id")
+  creationDate   DateTime   @map("creation_date")
+  invoicedDate   DateTime?  @map("invoiced_date")
+  totalValue     Float?     @map("total_value")
+  status         String?
+  shipments      Shipment[] 
+}
+
+
+model Product {
+  id        String     @id @map("product_id")
+  name      String?    
+  skuName   String?
+  shipments Shipment[] 
+}
+
+
+model Warehouse {
+  id        String     @id @map("warehouse_id")
+  name      String?    
+  shipments Shipment[] 
+}
+
+
+model City {
+  id        Int        @id @default(autoincrement())
+  name      String
+  state     String?
+  country   String?
+  @@unique([name, state, country])
+  shipments Shipment[] 
+}
+
+
+model Shipment {
+  id           Int      @id @default(autoincrement())
+  order        Order    @relation(fields: [orderId], references: [id])
+  orderId      String   @map("order_id")
+  product      Product  @relation(fields: [productId], references: [id])
+  productId    String   @map("product_id")
+  warehouse    Warehouse @relation(fields: [warehouseId], references: [id])
+  warehouseId  String   @map("warehouse_id")
+  city         City     @relation(fields: [cityId], references: [id])
+  cityId       Int      @map("city_id")
+  invoicedDate DateTime @map("invoiced_date")
+
+  @@index([productId])
+  @@index([warehouseId])
+  @@index([cityId])
+  @@index([invoicedDate])
+}
+
+model User {
+   id        Int      @id @default(autoincrement())
+   email     String   @unique
+   password  String
+   name      String?
+   role      String   @default("USER")
+   createdAt DateTime @default(now())
+   updatedAt DateTime @updatedAt
+ }
+
+model SyncProgress {
+  id        Int      @id @default(1)
+  lastPage  Int      @default(0)
+  updatedAt DateTime @updatedAt
+}
+
+model SyncError {
+  id          Int      @id @default(autoincrement())
+  orderId     String   
+  page        Int      
+  errorMsg    String   
+  createdAt   DateTime @default(now())
+}
+
+
