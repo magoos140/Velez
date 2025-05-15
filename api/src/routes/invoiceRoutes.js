@@ -5,6 +5,7 @@ const authenticateToken = require('../middlewares/authMiddleware');
 
 router.post('/sync', authenticateToken, async (req, res) => {
   try {
+    console.log('Syncing invoices...');
     const result = await syncInvoices();
     res.json(result);
   } catch (error) {

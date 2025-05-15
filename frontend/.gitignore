@@ -1,0 +1,16 @@
+node_modules
+
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
