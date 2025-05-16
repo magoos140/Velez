@@ -178,3 +178,57 @@ Permite buscar qué almacenes están habilitados para enviar productos a una ciu
 
 ### Movements
 Ofrece la posibilidad de filtrar los productos que han generado una orden dentro de un rango de fechas específico. Esto permite hacer un seguimiento temporal de los movimientos registrados.
+
+## Ejercicio de IA
+
+### 1. ¿Cómo podrías usar IA o técnicas de análisis para detectar estos patrones anómalos?
+
+Para detectar patrones anómalos, primero definiría qué comportamiento es “normal” usando datos históricos de distribución. Luego aplicaría técnicas de análisis estadístico para entender las distribuciones y detectar desviaciones. Además, usaría métodos de detección de anomalías basados en IA que sean fáciles de implementar, como algoritmos de aprendizaje no supervisado que identifican automáticamente casos atípicos sin necesidad de etiquetas previas. Esto ayuda a encontrar productos que se envían desde almacenes inusuales o a ciudades no habituales.
+
+### 2. ¿Qué variables considerarías para entrenar un modelo o analizar los datos?
+
+Consideraría variables clave como:
+
+Identificador de producto
+
+Almacén origen
+
+Ciudad destino
+
+Cantidad de movimientos por producto y almacén
+
+Tiempo entre envíos
+
+Frecuencia de envíos a cada ciudad
+Estas variables permiten caracterizar patrones normales y detectar desviaciones.
+
+### 3. ¿Qué tecnologías o librerías usarías (ej: scikit-learn, pandas, OpenAI API)?
+
+Usaría Python como lenguaje principal, junto con librerías como:
+
+pandas para manipulación y análisis de datos
+
+Librerías de IA fáciles de implementar para detección de anomalías (como Isolation Forest o métodos similares)
+
+Power BI para la visualización y análisis interactivo de los datos y resultados
+
+### 4. ¿Harías este análisis como parte del backend o como un proceso aparte? ¿Por qué?
+
+Este análisis lo haría como un proceso separado del backend principal. Esto evita sobrecargar la API con tareas pesadas, permite ejecutar el análisis de forma periódica (por ejemplo, diaria) y facilita el mantenimiento y escalabilidad del sistema.
+
+>
+## Pregunta de cierre
+
+Si tuviera libertad total para mejorar un proceso digital en ecommerce, me enfocaría en optimizar tanto la experiencia del cliente como la eficiencia operativa, combinando backend, análisis de datos e inteligencia artificial.
+
+Desde el lado del backend, aprovecharía mi experiencia desarrollando APIs con Symfony API Platform en PHP o con frameworks en Node.js como NestJS o Fastify, utilizando bases de datos como MySQL o MongoDB según la naturaleza de los datos. Esto me permitiría construir una arquitectura limpia, escalable y fácil de mantener.
+
+En cuanto a inteligencia artificial, integraría un sistema de recomendaciones de productos personalizado basado en el comportamiento del usuario (historial de navegación y compras), que podría implementarse con técnicas de clustering y filtrado colaborativo. Este sistema ayudaría a aumentar la conversión al ofrecer productos relevantes en tiempo real.
+
+También implementaría un sistema de atención al cliente automatizado que combine plataformas como Zoho Sales con la API de ChatGPT. Esta combinación permitiría ofrecer respuestas automatizadas, soporte 24/7, y ayudar al usuario en cada paso de su experiencia de compra, incluyendo consultas sobre pedidos, devoluciones o productos, sin necesidad de intervención humana inmediata.
+
+Además, como desarrollador, utilizaría ChatGPT como asistente técnico para mejorar la productividad: validar ideas, escribir fragmentos de código más rápido y resolver dudas técnicas durante el desarrollo.
+
+Por último, aplicaría análisis de datos para detectar patrones anómalos en la distribución, optimizar la gestión de inventario y anticipar demandas de productos por ciudad o temporada, mejorando la logística y reduciendo pérdidas.
+
+Este enfoque permitiría escalar el ecommerce de forma inteligente, mejorando la atención al cliente, las ventas y la toma de decisiones basada en datos.
