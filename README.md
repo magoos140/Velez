@@ -2,7 +2,7 @@
 
 > 
 
-Este proyecto es una solución completa para una prueba técnica. Incluye:
+Este proyecto es una solución completa para una prueba técnica desarrolada por Mateo Gonzalez. Incluye:
 
 - Una API backend desarrollada en Express.js.
 - Una interfaz frontend con SvelteKit para visualizar y probar los endpoints.
